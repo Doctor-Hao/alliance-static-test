@@ -25,6 +25,10 @@
   <a class="skip-link" href="#content">К содержанию</a>
 
   <header class="hero" id="top" data-hero="power">
+    <span class="hero__backdrop hero__backdrop--power" aria-hidden="true"></span>
+    <span class="hero__backdrop hero__backdrop--panels" aria-hidden="true"></span>
+    <span class="hero__backdrop hero__backdrop--supply" aria-hidden="true"></span>
+    <span class="hero__backdrop hero__backdrop--security" aria-hidden="true"></span>
     <div class="hero__inner splide" role="group" aria-label="Первый экран">
       <div class="hero__bar">
         <a class="brand" href="#top" aria-label="Альянс, начало страницы">
@@ -47,45 +51,42 @@
       </div>
 
       <div class="hero__grid">
-        <div class="hero__copy">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="hero__slide splide__slide" data-hero="power" aria-label="Промышленная электрика">
-                <h1 class="hero__title" id="hero-title">Проектирование
-                и монтаж промышленной
-                электрики под ключ</h1>
-                <p class="hero__description" id="hero-description">Современные Системы Безопасности — команда профессионалов, реализующая проекты в сфере электроснабжения, систем безопасности и противопожарной защиты.</p>
-              </li>
-              <li class="hero__slide splide__slide" data-hero="panels" aria-label="Щитовое оборудование">
-                <h2 class="hero__title">Сборка щитового
-                оборудования</h2>
-                <p class="hero__description">Подбираем комплектующие, собираем щиты и проверяем оборудование перед установкой.</p>
-              </li>
-              <li class="hero__slide splide__slide" data-hero="supply" aria-label="Электроснабжение предприятий">
-                <h2 class="hero__title">Электроснабжение
-                предприятий</h2>
-                <p class="hero__description">Проектируем и монтируем сети на производственных, складских и коммерческих объектах.</p>
-              </li>
-              <li class="hero__slide splide__slide" data-hero="security" aria-label="Безопасность объектов">
-                <h2 class="hero__title">Системы
-                безопасности</h2>
-                <p class="hero__description">Объединяем видеонаблюдение, контроль доступа и противопожарную защиту под задачи объекта.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="hero__actions">
-            <a class="button button--light" href="#contact">Отправить проект на расчёт</a>
-            <a class="button button--clear" href="#contact">Обсудить задачу</a>
-          </div>
+        <div class="hero__track splide__track">
+          <ul class="splide__list">
+            <li class="hero__slide splide__slide" data-hero="power" aria-label="Промышленная электрика">
+              <h1 class="hero__title">Проектирование
+              и монтаж промышленной
+              электрики под ключ</h1>
+              <p class="hero__description">Современные Системы Безопасности — команда профессионалов, реализующая проекты в сфере электроснабжения, систем безопасности и противопожарной защиты.</p>
+            </li>
+            <li class="hero__slide splide__slide" data-hero="panels" aria-label="Щитовое оборудование">
+              <h2 class="hero__title">Сборка щитового
+              оборудования</h2>
+              <p class="hero__description">Подбираем комплектующие, собираем щиты и проверяем оборудование перед установкой.</p>
+            </li>
+            <li class="hero__slide splide__slide" data-hero="supply" aria-label="Электроснабжение предприятий">
+              <h2 class="hero__title">Электроснабжение
+              предприятий</h2>
+              <p class="hero__description">Проектируем и монтируем сети на производственных, складских и коммерческих объектах.</p>
+            </li>
+            <li class="hero__slide splide__slide" data-hero="security" aria-label="Безопасность объектов">
+              <h2 class="hero__title">Системы
+              безопасности</h2>
+              <p class="hero__description">Объединяем видеонаблюдение, контроль доступа и противопожарную защиту под задачи объекта.</p>
+            </li>
+          </ul>
         </div>
+        <div class="hero__actions">
+          <a class="button button--light" href="#contact">Отправить проект на расчёт</a>
+          <a class="button button--clear" href="#contact">Обсудить задачу</a>
+        </div>
+        <ul class="hero__pagination splide__pagination"></ul>
         <ol class="hero__directions" aria-label="Направления работы">
           <li><a class="diagonal-arrow" href="#electrical"><span aria-hidden="true">01</span><strong>Проектирование электроснабжения</strong></a></li>
           <li><a class="diagonal-arrow" href="#electrical"><span aria-hidden="true">02</span><strong>Сборка щитового оборудования</strong></a></li>
           <li><a class="diagonal-arrow" href="#electrical"><span aria-hidden="true">03</span><strong>Электроснабжение предприятий</strong></a></li>
         </ol>
       </div>
-
-      <ul class="hero__pagination splide__pagination"></ul>
     </div>
   </header>
 

@@ -26,10 +26,9 @@
   if (!window.Splide) return;
 
   const slider = new window.Splide(hero.querySelector('.splide'), {
-    type: 'fade',
-    speed: 0,
+    type: 'loop',
     arrows: false,
-    drag: false,
+    flickMaxPages: 0.5,
     i18n: {
       carousel: 'карусель',
       slide: 'слайд',
@@ -37,7 +36,8 @@
     },
   });
 
-  slider.on('active', ({ slide }) => {
+  slider.on('move', (index) => {
+    const { slide } = slider.Components.Slides.getAt(index);
     hero.dataset.hero = slide.dataset.hero;
   });
   slider.on('pagination:mounted', ({ items }) => {
