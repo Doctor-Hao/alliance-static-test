@@ -18,7 +18,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: #f1f1f1;
+  background: #f4f4f4;
   color: #222622;
   font: 1rem/1.5 Montserrat, 'Segoe UI', Arial, sans-serif;
 }
@@ -60,9 +60,8 @@ button { cursor: pointer; }
   color: #1d422e;
 }
 .skip-link:focus { transform: none; }
-.shell { max-width: 1440px; margin-inline: auto; }
 .wrap { width: 86%; max-width: 1240px; margin-inline: auto; }
-.green-panel { color: #fff; background: linear-gradient(130deg, #638947 0%, #395d42 47%, #193d3b 100%); }
+.green-panel { color: #fff; background: linear-gradient(125deg, #64a24d, #194945); }
 
 .section-heading {
   display: flex;
@@ -101,7 +100,7 @@ h2, .section-heading h3 { font-size: clamp(2rem, 3.5vw, 3.125rem); text-transfor
   font-size: .875rem;
   font-weight: 700;
 }
-.button--green { color: #fff; background: linear-gradient(145deg, #54773e 0%, #264d41 90%); }
+.button--green { color: #fff; background: linear-gradient(145deg, #5b9147, #194945); }
 .button--green:hover { background: #254d3b; }
 .button--light { color: #232820; background: #fff; }
 .button--light:hover { background: #e9f0e5; }
@@ -109,22 +108,21 @@ h2, .section-heading h3 { font-size: clamp(2rem, 3.5vw, 3.125rem); text-transfor
 .button--clear:hover { background: #ffffff24; }
 .button--outline { color: #fff; background: transparent; border-color: #ddebdb99; }
 .button--outline:hover { background: #ffffff24; }
-.text-button {
-  padding: .48rem 0;
-  min-height: 2.75rem;
-  border: 0;
-  background: transparent;
-  color: #274d36;
-  text-align: left;
-  font-weight: 650;
-  font-size: .85rem;
+.footer a:hover { text-decoration: underline; }
+.diagonal-arrow::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  border: solid currentColor;
+  border-width: 1px 1px 0 0;
+  background: linear-gradient(135deg, transparent calc(50% - .5px), currentColor calc(50% - .5px), currentColor calc(50% + .5px), transparent calc(50% + .5px));
 }
-.text-button:hover, .footer a:hover { text-decoration: underline; }
 
-@media (max-width: 650px) {
-  .wrap { width: calc(100% - 2rem); }
+@media (max-width: 700px) {
+  .wrap { width: calc(100% - 2.5rem); }
   .section-heading { display: grid; gap: .65rem; }
   .section-heading p { text-align: left; }
+  h2, .section-heading h3 { font-size: clamp(1.65rem, 6.6vw, 1.9rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {

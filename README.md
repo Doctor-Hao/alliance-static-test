@@ -10,7 +10,7 @@ python -m http.server 8765 --bind 127.0.0.1
 
 ## Материалы
 
-Фотографии кадрированы и преобразованы в WebP.
+Фотографии первого экрана, карточек проектов и коллажа услуг взяты из предоставленного макета и оптимизированы в WebP. Остальные фотографии для слайдов и карты перечислены ниже.
 
 | Файл | Автор и источник | Лицензия |
 | --- | --- | --- |
@@ -18,7 +18,5 @@ python -m http.server 8765 --bind 127.0.0.1
 | `switchgear.webp` | P199, [Electrical switchgear](https://commons.wikimedia.org/wiki/File:Electrical_switchgear.JPG) | Общественное достояние |
 | `warehouse.webp` | Axisadman, [Modern warehouse with pallet rack storage system](https://commons.wikimedia.org/wiki/File:Modern_warehouse_with_pallet_rack_storage_system.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `factory.webp` | Shixart1985, [Industrial production line operating in a large modern factory](https://commons.wikimedia.org/wiki/File:Industrial_production_line_operating_in_a_large_modern_factory.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
-| `office.webp` | CadoMaestro, [People sitting at their desks](https://www.pexels.com/photo/1170412/) | [Pexels License](https://www.pexels.com/license/) |
-| `store.webp` | ha ha, [Shelves in grocery store](https://www.pexels.com/photo/16211537/) | [Pexels License](https://www.pexels.com/license/) |
 
-Границы регионов основаны на открытых данных [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/). Шрифты [Montserrat](assets/montserrat-OFL.txt) и [Tektur](assets/tektur-OFL.txt) поставляются по SIL Open Font License.
+Контур карты взят из предоставленного макета. Шрифты [Montserrat](assets/montserrat-OFL.txt) и [Tektur](assets/tektur-OFL.txt) поставляются по SIL Open Font License.
