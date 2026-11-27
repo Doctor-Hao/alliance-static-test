@@ -1,9 +1,15 @@
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
 
 function readFile(path) {
   return readFileSync(new URL(path, root), 'utf8').replaceAll('\r\n', '\n');
+}
+
+function assetUrl(path) {
+  const version = createHash('sha256').update(readFile(path)).digest('hex').slice(0, 10);
+  return `${path}?v=${version}`;
 }
 
 function escapeHtml(value) {
@@ -35,8 +41,8 @@ const components = names.map((name) => {
 
   return {
     html: readFile(`${path}.html`).trimEnd(),
-    style: `<link rel="stylesheet" href="${path}.css">`,
-    script: existsSync(new URL(`${path}.js`, root)) ? `<script defer src="${path}.js"></script>` : '',
+    style: `<link rel="stylesheet" href="${assetUrl(`${path}.css`)}">`,
+    script: existsSync(new URL(`${path}.js`, root)) ? `<script defer src="${assetUrl(`${path}.js`)}"></script>` : '',
   };
 });
 

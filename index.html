@@ -8,18 +8,18 @@
   <title>Альянс — проектирование и монтаж промышленной электрики</title>
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="assets/vendor/splide/splide-core.min.css">
-  <link rel="stylesheet" href="components/hero/hero.css">
-  <link rel="stylesheet" href="components/projects/projects.css">
-  <link rel="stylesheet" href="components/services/services.css">
-  <link rel="stylesheet" href="components/process/process.css">
-  <link rel="stylesheet" href="components/company/company.css">
-  <link rel="stylesheet" href="components/reviews/reviews.css">
-  <link rel="stylesheet" href="components/contact/contact.css">
-  <link rel="stylesheet" href="components/footer/footer.css">
+  <link rel="stylesheet" href="components/hero/hero.css?v=291ac10eab">
+  <link rel="stylesheet" href="components/projects/projects.css?v=07eb9894ef">
+  <link rel="stylesheet" href="components/services/services.css?v=49ed126b51">
+  <link rel="stylesheet" href="components/process/process.css?v=6081a69b70">
+  <link rel="stylesheet" href="components/company/company.css?v=401455f1e3">
+  <link rel="stylesheet" href="components/reviews/reviews.css?v=be80e55a14">
+  <link rel="stylesheet" href="components/contact/contact.css?v=58eb516a1c">
+  <link rel="stylesheet" href="components/footer/footer.css?v=b00cff238b">
   <script defer src="assets/vendor/splide/splide.min.js"></script>
-  <script defer src="components/hero/hero.js"></script>
-  <script defer src="components/projects/projects.js"></script>
-  <script defer src="components/contact/contact.js"></script>
+  <script defer src="components/hero/hero.js?v=c3ab6b1500"></script>
+  <script defer src="components/projects/projects.js?v=6d87d1380e"></script>
+  <script defer src="components/contact/contact.js?v=b23c0ebd99"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">К содержанию</a>
@@ -101,16 +101,58 @@
             <button class="projects__zoom" type="button" aria-pressed="false">Приблизить карту</button>
           </div>
         </div>
-        <article class="projects__details" aria-labelledby="project-city">
-          <h3 class="projects__city" id="project-city">Москва и Подмосковье</h3>
-          <p class="projects__name" id="project-name">Выезжаем на объекты по Москве и области.</p>
-          <div class="projects__facts" id="project-facts">
-            <strong id="project-size">Москва</strong>
-            <p id="project-description">Выберите точку, чтобы посмотреть пример объекта.</p>
+        <div class="projects__details splide" role="group" aria-label="Проекты на карте">
+          <div class="projects__track splide__track">
+            <ul class="splide__list">
+              <li class="projects__slide splide__slide" aria-label="Область работы">
+                <h3 class="projects__city">Москва и Подмосковье</h3>
+                <p class="projects__name">Выезжаем на объекты по Москве и области.</p>
+                <div class="projects__facts">
+                  <strong>Москва</strong>
+                  <p>Выберите точку, чтобы посмотреть пример объекта.</p>
+                </div>
+                <img class="projects__photo" src="assets/images/project-office.webp" alt="Распределительное оборудование" width="704" height="518" draggable="false">
+              </li>
+              <li class="projects__slide splide__slide" data-project="office" data-x="60.2" data-y="46.8" aria-label="Москва, Офисный комплекс">
+                <h3 class="projects__city">Москва</h3>
+                <p class="projects__name">Офисный комплекс</p>
+                <div class="projects__facts">
+                  <strong>3 500 м²</strong>
+                  <p>Монтаж вводных распределительных щитов и освещения.</p>
+                </div>
+                <img class="projects__photo" src="assets/images/project-office.webp" alt="Шкафы распределительного оборудования" width="704" height="518" draggable="false">
+              </li>
+              <li class="projects__slide splide__slide" data-project="factory" data-x="51.8" data-y="62.4" aria-label="Апрелевка, Производственный цех">
+                <h3 class="projects__city">Апрелевка</h3>
+                <p class="projects__name">Производственный цех</p>
+                <div class="projects__facts">
+                  <strong>5 000 м²</strong>
+                  <p>Электроснабжение цеха и монтаж системы оповещения.</p>
+                </div>
+                <img class="projects__photo" src="assets/images/project-factory.webp" alt="Производственный цех с монтажным подъёмником" width="920" height="435" loading="lazy" draggable="false">
+              </li>
+              <li class="projects__slide splide__slide" data-project="warehouse" data-x="57.5" data-y="84.5" aria-label="Подольск, Логистический центр">
+                <h3 class="projects__city">Подольск</h3>
+                <p class="projects__name">Логистический центр</p>
+                <div class="projects__facts">
+                  <strong>4 200 м²</strong>
+                  <p>Проектирование и монтаж освещения и видеонаблюдения.</p>
+                </div>
+                <img class="projects__photo" src="assets/images/project-warehouse.webp" alt="Пожарное оборудование у стены склада" width="704" height="458" loading="lazy" draggable="false">
+              </li>
+              <li class="projects__slide splide__slide" data-project="equipment" data-x="43.9" data-y="55.8" aria-label="Руза, Инженерный узел">
+                <h3 class="projects__city">Руза</h3>
+                <p class="projects__name">Инженерный узел</p>
+                <div class="projects__facts">
+                  <strong>1 200 м²</strong>
+                  <p>Подключение оборудования и проверка электроснабжения.</p>
+                </div>
+                <img class="projects__photo" src="assets/images/hero.webp" alt="Электрическое оборудование на открытой подстанции" width="1600" height="900" loading="lazy" draggable="false">
+              </li>
+            </ul>
           </div>
-          <img class="projects__photo" id="project-photo" src="assets/images/project-office.webp" alt="Распределительное оборудование" width="704" height="518">
-          <div class="projects__pagination" role="group" aria-label="Переключение объектов" hidden></div>
-        </article>
+          <ul class="projects__pagination splide__pagination"></ul>
+        </div>
         <p class="visually-hidden" id="project-status" role="status"></p>
       </div>
       <ul class="projects__features wrap">

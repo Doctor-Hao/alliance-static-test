@@ -1,135 +1,77 @@
 (() => {
-  const projects = [
-    {
-      id: 'office',
-      city: 'Москва',
-      name: 'Офисный комплекс',
-      size: '3 500 м²',
-      description: 'Монтаж вводных распределительных щитов и освещения.',
-      image: 'assets/images/project-office.webp',
-      alt: 'Шкафы распределительного оборудования',
-      x: 60.2,
-      y: 46.8,
-    },
-    {
-      id: 'factory',
-      city: 'Апрелевка',
-      name: 'Производственный цех',
-      size: '5 000 м²',
-      description: 'Электроснабжение цеха и монтаж системы оповещения.',
-      image: 'assets/images/project-factory.webp',
-      alt: 'Производственный цех с монтажным подъёмником',
-      x: 51.8,
-      y: 62.4,
-    },
-    {
-      id: 'warehouse',
-      city: 'Подольск',
-      name: 'Логистический центр',
-      size: '4 200 м²',
-      description: 'Проектирование и монтаж освещения и видеонаблюдения.',
-      image: 'assets/images/project-warehouse.webp',
-      alt: 'Пожарное оборудование у стены склада',
-      x: 57.5,
-      y: 84.5,
-    },
-    {
-      id: 'equipment',
-      city: 'Руза',
-      name: 'Инженерный узел',
-      size: '1 200 м²',
-      description: 'Подключение оборудования и проверка электроснабжения.',
-      image: 'assets/images/hero.webp',
-      alt: 'Электрическое оборудование на открытой подстанции',
-      x: 43.9,
-      y: 55.8,
-    },
-  ];
+  if (!window.Splide) return;
 
   const section = document.querySelector('#projects');
+  const details = section.querySelector('.projects__details');
+  const slides = Array.from(details.querySelectorAll('.projects__slide'));
   const mapImage = section.querySelector('.projects__map-art img');
   const pins = section.querySelector('.projects__pins');
-  const pagination = section.querySelector('.projects__pagination');
   const zoom = section.querySelector('.projects__zoom');
   const map = section.querySelector('.projects__map');
-  const city = section.querySelector('#project-city');
-  const name = section.querySelector('#project-name');
-  const size = section.querySelector('#project-size');
-  const description = section.querySelector('#project-description');
-  const picture = section.querySelector('#project-photo');
   const status = section.querySelector('#project-status');
-  const area = {
-    id: '',
-    city: city.textContent,
-    name: name.textContent,
-    size: size.textContent,
-    description: description.textContent,
-    image: picture.getAttribute('src'),
-    alt: picture.alt,
-  };
-
   const zoomOrigin = { x: 54, y: 64 };
   const zoomScale = 1.45;
-  const projectControls = [];
   const mapButtons = [];
   mapImage.style.transformOrigin = `${zoomOrigin.x}% ${zoomOrigin.y}%`;
 
-  function selectProject(project) {
-    city.textContent = project.city;
-    name.textContent = project.name;
-    size.textContent = project.size;
-    description.textContent = project.description;
-    picture.src = project.image;
-    picture.alt = project.alt;
-
-    for (const button of projectControls) {
-      button.setAttribute('aria-pressed', String(button.dataset.project === project.id));
+  const slider = new window.Splide(details, {
+    type: 'loop',
+    arrows: false,
+    flickMaxPages: 0.5,
+    live: false,
+    i18n: {
+      carousel: 'карусель',
+      slide: 'слайд',
+      select: 'Выбор объекта',
+    },
+  });
+  slider.on('move', (index) => {
+    for (const { pin, index: pinIndex } of mapButtons) {
+      pin.setAttribute('aria-pressed', String(pinIndex === index));
     }
-
-    status.textContent = project.id
-      ? `Выбран объект «${project.name}», ${project.city}.`
+    const slide = slides[index];
+    status.textContent = slide.dataset.project
+      ? `Выбран объект. ${slide.getAttribute('aria-label')}.`
       : 'Показана область работы.';
-  }
+  });
+  slider.on('pagination:mounted', ({ items }) => {
+    for (const { button, page } of items) {
+      button.setAttribute('aria-label', slides[page].getAttribute('aria-label'));
+    }
+  });
+  slider.mount();
 
-  function projectButton(project, label, className) {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = className;
-    button.dataset.project = project.id;
-    button.setAttribute('aria-label', label);
-    button.setAttribute('aria-pressed', String(project === area));
-    button.addEventListener('click', () => selectProject(project));
-    projectControls.push(button);
-    return button;
-  }
+  for (const [index, slide] of slides.entries()) {
+    const { project, x, y } = slide.dataset;
+    if (!project) continue;
 
-  pagination.append(projectButton(area, 'Область работы', 'projects__dot'));
-
-  for (const project of projects) {
-    const label = `${project.city}, ${project.name}`;
-    const pin = projectButton(project, label, 'projects__pin');
+    const label = slide.getAttribute('aria-label');
+    const pin = document.createElement('button');
+    pin.type = 'button';
+    pin.className = 'projects__pin';
+    pin.dataset.project = project;
     pin.title = label;
+    pin.setAttribute('aria-label', label);
+    pin.setAttribute('aria-pressed', 'false');
+    pin.addEventListener('click', () => slider.go(index));
     pins.append(pin);
-    pagination.append(projectButton(project, label, 'projects__dot'));
-    mapButtons.push({ project, pin });
+    mapButtons.push({ pin, index, x: Number(x), y: Number(y) });
 
-    const cardButton = section.querySelector(`[data-show-project="${project.id}"]`);
+    const cardButton = section.querySelector(`[data-show-project="${project}"]`);
     if (!cardButton) continue;
 
     cardButton.hidden = false;
     cardButton.addEventListener('click', () => {
-      selectProject(project);
+      slider.go(index);
       map.scrollIntoView({ block: 'start' });
       pin.focus({ preventScroll: true });
     });
   }
 
   function positionPins(scale) {
-    for (const { project, pin } of mapButtons) {
-      const x = zoomOrigin.x + (project.x - zoomOrigin.x) * scale;
-      const y = zoomOrigin.y + (project.y - zoomOrigin.y) * scale;
-      pin.style.left = `${x}%`;
-      pin.style.top = `${y}%`;
+    for (const { pin, x, y } of mapButtons) {
+      pin.style.left = `${zoomOrigin.x + (x - zoomOrigin.x) * scale}%`;
+      pin.style.top = `${zoomOrigin.y + (y - zoomOrigin.y) * scale}%`;
     }
   }
 
@@ -143,6 +85,5 @@
   });
 
   section.querySelector('.projects__map-actions').hidden = false;
-  pagination.hidden = false;
   positionPins(1);
 })();
