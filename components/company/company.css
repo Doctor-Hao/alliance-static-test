@@ -25,7 +25,6 @@
 .company__card a { display: flex; align-items: center; justify-content: space-between; gap: .65rem; padding-block: .45rem; font-size: .9rem; font-weight: 650; }
 .company__card a::after { flex: none; width: .7rem; height: .7rem; }
 .company__card > .company__more { justify-content: flex-start; width: fit-content; margin-top: 1.3rem; }
-.company__grid a:hover { text-decoration: underline; }
 
 @media (max-width: 740px) {
   .company { padding: 3.5rem 0; }

@@ -61,8 +61,6 @@
   font-size: .78rem;
 }
 
-.footer a:hover { text-decoration: underline; }
-
 @media (max-width: 740px) {
   .footer {
     min-height: 55.3125rem;
