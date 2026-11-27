@@ -1,0 +1,14 @@
+{
+  "title": "Альянс — проектирование и монтаж промышленной электрики",
+  "description": "Демонстрационная главная инженерной компании «Альянс».",
+  "header": "hero",
+  "sections": [
+    "projects",
+    "services",
+    "process",
+    "company",
+    "reviews",
+    "contact"
+  ],
+  "footer": "footer"
+}

@@ -6,12 +6,16 @@
 
 ## Структура проекта
 
-Каркас главной лежит в `templates/home.html`. У каждой секции есть свой HTML в `components/`. Рядом лежат стили и, где нужен, JavaScript. [Скрипт сборки](scripts/build.mjs) объединяет эти шаблоны в готовый `index.html`.
+Общий HTML-каркас лежит в `layout/base.html`. Шаблон `templates/home.json` задаёт заголовок вкладки, метаописание и порядок секций в `<main>`. Поля `header` и `footer` задают первый экран с навигацией и подвал. В `components/` у каждой секции есть свой HTML, CSS и при необходимости JavaScript.
+
+После правок исходников запустите `node scripts/build.mjs`. Сборка вставит выбранные секции в каркас, подключит их стили и скрипты и обновит корневой `index.html` для GitHub Pages.
 
 ```text
 index.html       готовая страница
+layout/
+  base.html      общий HTML-каркас
 templates/
-  home.html      каркас главной
+  home.json      метаданные и порядок секций главной
 components/
   hero/          первый экран, навигация и слайды
   projects/      карта и карточки проектов
