@@ -6,15 +6,15 @@
   <meta name="description" content="Демонстрационная главная инженерной компании «Альянс».">
   <meta name="robots" content="noindex, nofollow">
   <title>Альянс — проектирование и монтаж промышленной электрики</title>
-  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/base.css?v=f53e4e8f26">
   <link rel="stylesheet" href="assets/vendor/splide/splide-core.min.css">
-  <link rel="stylesheet" href="components/hero/hero.css?v=5426771ada">
-  <link rel="stylesheet" href="components/projects/projects.css?v=ab9e2aeeea">
-  <link rel="stylesheet" href="components/services/services.css?v=e43a1c6443">
-  <link rel="stylesheet" href="components/process/process.css?v=14bb27705e">
+  <link rel="stylesheet" href="components/hero/hero.css?v=3898cfa755">
+  <link rel="stylesheet" href="components/projects/projects.css?v=68db0ed2e2">
+  <link rel="stylesheet" href="components/services/services.css?v=221eb8e243">
+  <link rel="stylesheet" href="components/process/process.css?v=d3d5b92cea">
   <link rel="stylesheet" href="components/company/company.css?v=401455f1e3">
   <link rel="stylesheet" href="components/reviews/reviews.css?v=be80e55a14">
-  <link rel="stylesheet" href="components/contact/contact.css?v=e45df4af13">
+  <link rel="stylesheet" href="components/contact/contact.css?v=0def5289c7">
   <link rel="stylesheet" href="components/footer/footer.css?v=b00cff238b">
   <script defer src="assets/vendor/splide/splide.min.js"></script>
   <script defer src="assets/vendor/panzoom/panzoom-4.6.2.min.js"></script>
@@ -45,8 +45,8 @@
           <a href="#contact">Контакты</a>
         </nav>
         <div class="hero__phones" aria-label="Демонстрационные номера">
-          <strong>+7 (000) 000-00-00</strong>
-          <span>+7 (000) 000-00-01</span>
+          <a href="tel:+70000000000"><strong>+7 (000) 000-00-00</strong></a>
+          <a href="tel:+70000000001">+7 (000) 000-00-01</a>
         </div>
         <a class="button button--green hero__contact" href="#contact">Обсудить проект</a>
       </div>
@@ -323,12 +323,12 @@
           <div class="contact__copy">
             <p>Приложите проект или ТЗ — проверим документацию и подготовим расчёт.</p>
             <address class="contact__details" aria-label="Демонстрационные контакты">
-              <strong class="contact__phone">+7 (000) 000-00-00</strong>
-              <span class="contact__phone">+7 (000) 000-00-01</span>
+              <a class="contact__phone" href="tel:+70000000000"><strong>+7 (000) 000-00-00</strong></a>
+              <a class="contact__phone" href="tel:+70000000001">+7 (000) 000-00-01</a>
               <span class="contact__email">demo@example.com</span>
-              <div class="contact__channels" aria-label="Каналы связи в макете">
-                <button type="button" disabled><span class="contact__channel-mark contact__channel-mark--plane" aria-hidden="true"></span>Telegram</button>
-                <button type="button" disabled><span class="contact__channel-mark contact__channel-mark--chat" aria-hidden="true">☎</span>WhatsApp</button>
+              <div class="contact__channels" role="group" aria-label="Каналы связи в макете">
+                <a href="#contact"><span class="contact__channel-mark contact__channel-mark--plane" aria-hidden="true"></span>Telegram</a>
+                <a href="#contact"><span class="contact__channel-mark contact__channel-mark--chat" aria-hidden="true">☎</span>WhatsApp</a>
               </div>
             </address>
           </div>
@@ -365,7 +365,13 @@
         </div>
         <nav aria-label="Услуги"><h2>Услуги</h2><a href="#electrical">Электромонтажные работы</a><a href="#fire">Пожарная сигнализация</a><a href="#video">Видеонаблюдение</a><a href="#access">Системы СКУД</a></nav>
         <nav aria-label="Компания"><h2>Компания</h2><a href="#company">О компании</a><a href="#projects">Выполненные проекты</a><a href="#documents">Лицензии и документы</a><a href="#reviews">Отзывы клиентов</a><a href="#contact">Контакты</a></nav>
-        <div><h2>Контакты</h2><p>+7 (000) 000-00-00<br>+7 (000) 000-00-01</p><p>demo@example.com</p><p>Москва и Московская область</p><a class="footer__coverage" href="#projects"><span aria-hidden="true"></span>География работ</a></div>
+        <div>
+          <h2>Контакты</h2>
+          <p><a href="tel:+70000000000">+7 (000) 000-00-00</a><br><a href="tel:+70000000001">+7 (000) 000-00-01</a></p>
+          <p>demo@example.com</p>
+          <p>Москва и Московская область</p>
+          <a class="footer__coverage" href="#projects"><span aria-hidden="true"></span>География работ</a>
+        </div>
       </div>
       <div class="footer__bottom"><span>© «Альянс» · демонстрационная вёрстка</span><a href="#preview-form">Данные демонстрационной формы</a><a href="#top">К началу страницы</a></div>
     </div>

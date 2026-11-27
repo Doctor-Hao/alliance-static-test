@@ -49,6 +49,7 @@ const components = names.map((name) => {
 const slots = {
   title: escapeHtml(title),
   description: escapeHtml(description),
+  basestyle: assetUrl('styles/base.css'),
   styles: components.map(({ style }) => style).join('\n'),
   scripts: components.map(({ script }) => script).filter(Boolean).join('\n'),
   header: components[0].html,

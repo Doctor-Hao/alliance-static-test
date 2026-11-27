@@ -16,7 +16,7 @@
   border: 1px solid #4c674e;
   border-radius: 50%;
   background: #f4f4f4;
-  transition: background-color var(--hover-duration) ease-out, border-color var(--hover-duration) ease-out, box-shadow var(--hover-duration) ease-out;
+  transition: background-color 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out;
 }
 .process__steps li:nth-child(even)::after { top: -3.05rem; }
 .process__steps li:last-child::after { background: #315545; }
@@ -29,7 +29,7 @@
 .process__estimate .button { flex: none; }
 
 @media (hover: hover) {
-  .process__steps li:has(> .process__number:hover)::after {
+  .process__steps li:hover::after {
     border-color: #386549;
     background-color: #72ac5f;
     box-shadow: 0 0 0 .2rem #78ad6355, 0 0 .65rem #407a4a88;

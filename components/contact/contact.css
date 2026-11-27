@@ -4,10 +4,10 @@
 .contact__copy > p { max-width: 25rem; color: #39443b; }
 .contact__details { display: grid; gap: .4rem; margin-top: auto; color: #303c33; font-style: normal; }
 .contact__details strong { font-size: 1.35rem; }
-.contact__phone { justify-self: start; transition: color var(--hover-duration) ease-out, text-shadow var(--hover-duration) ease-out; }
+.contact__details .contact__phone { justify-self: start; transition: color 180ms ease-out, text-shadow 180ms ease-out, text-decoration-color 180ms ease-out; }
 .contact__email { margin-top: .55rem; }
 .contact__channels { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem; }
-.contact__channels button {
+.contact__channels a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -19,10 +19,10 @@
   background: #fff;
   color: #252d28;
   font-size: .875rem;
-  transition: background-color var(--hover-duration) ease-out, color var(--hover-duration) ease-out, box-shadow var(--hover-duration) ease-out;
+  text-decoration: none;
+  transition: background-color 180ms ease-out, color 180ms ease-out, box-shadow 180ms ease-out;
 }
-.contact__channels button:disabled { cursor: default; }
-.contact__channel-mark { display: grid; place-items: center; width: 2rem; height: 2rem; font-size: 1.6rem; line-height: 1; transition: transform var(--hover-duration) ease-out; }
+.contact__channel-mark { display: grid; place-items: center; width: 2rem; height: 2rem; font-size: 1.6rem; line-height: 1; transition: transform 180ms ease-out; }
 .contact__channel-mark--plane { background: currentColor; clip-path: polygon(1% 44%, 96% 9%, 80% 92%, 56% 72%, 42% 86%, 45% 62%, 78% 30%, 35% 56%); }
 .contact__channel-mark--chat { border: 2px solid; border-radius: 50%; font-size: 1.1rem; }
 .contact__form { min-width: 0; padding: 1.4rem 1.65rem; border-radius: .85rem; background: #fafbfa; box-shadow: 0 5px 20px #26362b12; }
@@ -44,11 +44,11 @@
 
 @media (hover: hover) {
   .contact__phone:hover { color: #265c40; text-shadow: 0 0 .55rem #61935c55; }
-  .contact__channels button:hover { background-color: #f5faf3; color: #265c40; box-shadow: 0 5px 16px #244c3528; }
+  .contact__channels a:is(:hover, :focus-visible) { background-color: #f5faf3; color: #265c40; box-shadow: 0 5px 16px #244c3528; }
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .contact__channels button:hover .contact__channel-mark { transform: translateY(-2px); }
+  .contact__channels a:is(:hover, :focus-visible) .contact__channel-mark { transform: translateY(-2px); }
 }
 
 @media (max-width: 740px) {
