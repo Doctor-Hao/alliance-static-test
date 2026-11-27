@@ -10,6 +10,8 @@
 
 После правок исходников запустите `node scripts/build.mjs`. Сборка вставит выбранные секции в каркас, подключит их стили и скрипты и обновит корневой `index.html` для GitHub Pages.
 
+Слайдер первого экрана использует [Splide 4.1.4](https://splidejs.com/). Библиотека и её лицензия MIT лежат в `assets/vendor/splide/`.
+
 ```text
 index.html       готовая страница
 layout/

@@ -7,6 +7,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Альянс — проектирование и монтаж промышленной электрики</title>
   <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="assets/vendor/splide/splide-core.min.css">
   <link rel="stylesheet" href="components/hero/hero.css">
   <link rel="stylesheet" href="components/projects/projects.css">
   <link rel="stylesheet" href="components/services/services.css">
@@ -15,6 +16,7 @@
   <link rel="stylesheet" href="components/reviews/reviews.css">
   <link rel="stylesheet" href="components/contact/contact.css">
   <link rel="stylesheet" href="components/footer/footer.css">
+  <script defer src="assets/vendor/splide/splide.min.js"></script>
   <script defer src="components/hero/hero.js"></script>
   <script defer src="components/projects/projects.js"></script>
   <script defer src="components/contact/contact.js"></script>
@@ -23,7 +25,7 @@
   <a class="skip-link" href="#content">К содержанию</a>
 
   <header class="hero" id="top" data-hero="power">
-    <div class="hero__inner">
+    <div class="hero__inner splide" role="group" aria-label="Первый экран">
       <div class="hero__bar">
         <a class="brand" href="#top" aria-label="Альянс, начало страницы">
           <span class="brand__mark" aria-hidden="true"></span>
@@ -46,10 +48,31 @@
 
       <div class="hero__grid">
         <div class="hero__copy">
-          <h1 class="hero__title" id="hero-title">Проектирование
-          и монтаж промышленной
-          электрики под ключ</h1>
-          <p class="hero__description" id="hero-description">Современные Системы Безопасности — команда профессионалов, реализующая проекты в сфере электроснабжения, систем безопасности и противопожарной защиты.</p>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="hero__slide splide__slide" data-hero="power" aria-label="Промышленная электрика">
+                <h1 class="hero__title" id="hero-title">Проектирование
+                и монтаж промышленной
+                электрики под ключ</h1>
+                <p class="hero__description" id="hero-description">Современные Системы Безопасности — команда профессионалов, реализующая проекты в сфере электроснабжения, систем безопасности и противопожарной защиты.</p>
+              </li>
+              <li class="hero__slide splide__slide" data-hero="panels" aria-label="Щитовое оборудование">
+                <h2 class="hero__title">Сборка щитового
+                оборудования</h2>
+                <p class="hero__description">Подбираем комплектующие, собираем щиты и проверяем оборудование перед установкой.</p>
+              </li>
+              <li class="hero__slide splide__slide" data-hero="supply" aria-label="Электроснабжение предприятий">
+                <h2 class="hero__title">Электроснабжение
+                предприятий</h2>
+                <p class="hero__description">Проектируем и монтируем сети на производственных, складских и коммерческих объектах.</p>
+              </li>
+              <li class="hero__slide splide__slide" data-hero="security" aria-label="Безопасность объектов">
+                <h2 class="hero__title">Системы
+                безопасности</h2>
+                <p class="hero__description">Объединяем видеонаблюдение, контроль доступа и противопожарную защиту под задачи объекта.</p>
+              </li>
+            </ul>
+          </div>
           <div class="hero__actions">
             <a class="button button--light" href="#contact">Отправить проект на расчёт</a>
             <a class="button button--clear" href="#contact">Обсудить задачу</a>
@@ -62,12 +85,7 @@
         </ol>
       </div>
 
-      <div class="hero__pagination" role="group" aria-label="Направления на первом экране" hidden>
-        <button type="button" aria-label="Промышленная электрика" aria-pressed="true" data-hero-slide="power"></button>
-        <button type="button" aria-label="Щитовое оборудование" aria-pressed="false" data-hero-slide="panels"></button>
-        <button type="button" aria-label="Электроснабжение предприятий" aria-pressed="false" data-hero-slide="supply"></button>
-        <button type="button" aria-label="Безопасность объектов" aria-pressed="false" data-hero-slide="security"></button>
-      </div>
+      <ul class="hero__pagination splide__pagination"></ul>
     </div>
   </header>
 

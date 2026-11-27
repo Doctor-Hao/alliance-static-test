@@ -23,42 +23,28 @@
   narrow.addEventListener('change', () => setMenu(false));
   setMenu(false);
 
-  const pagination = hero.querySelector('.hero__pagination');
-  const buttons = pagination.querySelectorAll('button[data-hero-slide]');
-  const title = hero.querySelector('#hero-title');
-  const description = hero.querySelector('#hero-description');
-  const slides = {
-    power: {
-      title: title.textContent,
-      description: description.textContent,
-    },
-    panels: {
-      title: 'Сборка щитового\nоборудования',
-      description: 'Подбираем комплектующие, собираем щиты и проверяем оборудование перед установкой.',
-    },
-    supply: {
-      title: 'Электроснабжение\nпредприятий',
-      description: 'Проектируем и монтируем сети на производственных, складских и коммерческих объектах.',
-    },
-    security: {
-      title: 'Системы\nбезопасности',
-      description: 'Объединяем видеонаблюдение, контроль доступа и противопожарную защиту под задачи объекта.',
-    },
-  };
+  if (!window.Splide) return;
 
-  for (const button of buttons) {
-    button.addEventListener('click', () => {
-      const slideId = button.dataset.heroSlide;
-      const slide = slides[slideId];
+  const slider = new window.Splide(hero.querySelector('.splide'), {
+    type: 'fade',
+    speed: 0,
+    arrows: false,
+    drag: false,
+    i18n: {
+      carousel: 'карусель',
+      slide: 'слайд',
+      select: 'Направления на первом экране',
+    },
+  });
 
-      hero.dataset.hero = slideId;
-      title.textContent = slide.title;
-      description.textContent = slide.description;
-
-      for (const control of buttons) {
-        control.setAttribute('aria-pressed', String(control === button));
-      }
-    });
-  }
-  pagination.hidden = false;
+  slider.on('active', ({ slide }) => {
+    hero.dataset.hero = slide.dataset.hero;
+  });
+  slider.on('pagination:mounted', ({ items }) => {
+    for (const { button, page } of items) {
+      const { slide } = slider.Components.Slides.getAt(page);
+      button.setAttribute('aria-label', slide.getAttribute('aria-label'));
+    }
+  });
+  slider.mount();
 })();
