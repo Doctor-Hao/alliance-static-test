@@ -1,0 +1,37 @@
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="wrap">
+    <h2 id="contact-heading">Обсудить объект</h2>
+    <div class="contact__layout">
+      <div class="contact__copy">
+        <p>Приложите проект или ТЗ — проверим документацию и подготовим расчёт.</p>
+        <address class="contact__details" aria-label="Демонстрационные контакты">
+          <strong>+7 (000) 000-00-00</strong>
+          <span>+7 (000) 000-00-01</span>
+          <span class="contact__email">demo@example.com</span>
+          <div class="contact__channels" aria-label="Каналы связи в макете">
+            <button type="button" disabled><span class="contact__channel-mark contact__channel-mark--plane" aria-hidden="true"></span>Telegram</button>
+            <button type="button" disabled><span class="contact__channel-mark contact__channel-mark--chat" aria-hidden="true">☎</span>WhatsApp</button>
+          </div>
+        </address>
+      </div>
+      <form class="contact__form" id="preview-form" method="dialog">
+        <label for="contact-name">Имя</label>
+        <input id="contact-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" required maxlength="120">
+        <div class="contact__row">
+          <div><label for="contact-phone">Телефон</label><input id="contact-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required maxlength="22"></div>
+          <div><label for="contact-email">E-mail</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="mail@company.ru" maxlength="254"></div>
+        </div>
+        <label for="contact-message">Объект и задача</label>
+        <textarea id="contact-message" name="message" rows="3" placeholder="Тип объекта, адрес и состав работ" maxlength="2000" required></textarea>
+        <label class="contact__upload" for="contact-file">
+          <strong>Прикрепить проект, ТЗ или план помещения</strong>
+          <span id="contact-file-note">PDF, JPG, XLSX · до 20 МБ</span>
+          <input id="contact-file" name="attachment" type="file" accept=".pdf,.jpg,.jpeg,.xlsx" aria-describedby="contact-file-note">
+        </label>
+        <label class="contact__consent"><input name="consent" type="checkbox" required> <span>Согласен на обработку данных формы</span></label>
+        <button class="button button--green contact__submit" type="submit">Отправить заявку</button>
+        <p class="contact__status" id="contact-status" role="status">Демонстрационная форма. Данные остаются в браузере.</p>
+      </form>
+    </div>
+  </div>
+</section>

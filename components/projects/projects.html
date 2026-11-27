@@ -1,0 +1,72 @@
+<section class="projects" id="projects" aria-labelledby="projects-heading">
+  <h2 class="visually-hidden" id="projects-heading">Выполненные работы</h2>
+  <div class="projects__map-layout wrap">
+    <div class="projects__map" role="group" aria-label="Карта демонстрационных объектов">
+      <div class="projects__map-art" aria-hidden="true"><img src="assets/images/moscow-region.webp" alt="" width="1400" height="1157"></div>
+      <div class="projects__pins" role="group" aria-label="Выбор объекта на карте"></div>
+      <div class="projects__map-actions" hidden>
+        <button class="projects__zoom" type="button" aria-pressed="false">Приблизить карту</button>
+      </div>
+    </div>
+    <article class="projects__details" aria-labelledby="project-city">
+      <h3 class="projects__city" id="project-city">Москва и Подмосковье</h3>
+      <p class="projects__name" id="project-name">Выезжаем на объекты по Москве и области.</p>
+      <div class="projects__facts" id="project-facts">
+        <strong id="project-size">Москва</strong>
+        <p id="project-description">Выберите точку, чтобы посмотреть пример объекта.</p>
+      </div>
+      <img class="projects__photo" id="project-photo" src="assets/images/project-office.webp" alt="Распределительное оборудование" width="704" height="518">
+      <div class="projects__pagination" role="group" aria-label="Переключение объектов" hidden></div>
+    </article>
+    <p class="visually-hidden" id="project-status" role="status"></p>
+  </div>
+  <ul class="projects__features wrap">
+    <li><strong>Опытная команда</strong><span>От инженеров до монтажников</span></li>
+    <li><strong>Сертифицированное оборудование</strong><span>Подбираем под требования проекта</span></li>
+    <li><strong>Работа на действующих объектах</strong><span>Согласовываем график работ</span></li>
+  </ul>
+  <div class="projects__portfolio wrap" id="project-list">
+    <div class="projects__list-heading"><h3 class="visually-hidden">Примеры работ</h3><span>Демонстрационные объекты</span></div>
+    <div class="projects__grid">
+      <article class="project-card">
+        <div class="project-card__media">
+          <img src="assets/images/project-office.webp" alt="Шкафы распределительного оборудования" width="704" height="518" loading="lazy">
+          <div class="project-card__tags"><span>Офис</span><span>Электроснабжение</span></div>
+        </div>
+        <div class="project-card__body">
+          <h4>Офисный комплекс</h4>
+          <p><strong>Объект:</strong> офисное здание, 3 500 м²</p>
+          <p><strong>Работы:</strong> вводные щиты и освещение</p>
+          <p><strong>Этапы:</strong> проектирование и монтаж</p>
+          <button type="button" class="project-card__map-link diagonal-arrow" aria-label="Показать офисный комплекс на карте" data-show-project="office" hidden></button>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-card__media">
+          <img src="assets/images/project-factory.webp" alt="Производственный цех с монтажным подъёмником" width="920" height="435" loading="lazy">
+          <div class="project-card__tags"><span>Производство</span><span>Комплекс работ</span></div>
+        </div>
+        <div class="project-card__body">
+          <h4>Производственный цех</h4>
+          <p><strong>Объект:</strong> промышленная площадка, 5 000 м²</p>
+          <p><strong>Работы:</strong> электроснабжение и оповещение</p>
+          <p><strong>Этапы:</strong> монтаж и пусконаладка</p>
+          <button type="button" class="project-card__map-link diagonal-arrow" aria-label="Показать производственный цех на карте" data-show-project="factory" hidden></button>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-card__media">
+          <img src="assets/images/project-warehouse.webp" alt="Пожарное оборудование у стены склада" width="704" height="458" loading="lazy">
+          <div class="project-card__tags"><span>Склад</span><span>Безопасность</span></div>
+        </div>
+        <div class="project-card__body">
+          <h4>Логистический центр</h4>
+          <p><strong>Объект:</strong> складской комплекс, 4 200 м²</p>
+          <p><strong>Работы:</strong> освещение и видеонаблюдение</p>
+          <p><strong>Этапы:</strong> проектирование и монтаж</p>
+          <button type="button" class="project-card__map-link diagonal-arrow" aria-label="Показать логистический центр на карте" data-show-project="warehouse" hidden></button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
