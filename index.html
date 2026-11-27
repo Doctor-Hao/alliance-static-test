@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Демонстрационная главная инженерной компании «Альянс».">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Альянс — проектирование и монтаж промышленной электрики</title>
+  <link rel="stylesheet" href="components/base.css">
+  <link rel="stylesheet" href="components/hero.css">
+  <link rel="stylesheet" href="components/projects.css">
+  <link rel="stylesheet" href="components/services.css">
+  <link rel="stylesheet" href="components/process.css">
+  <link rel="stylesheet" href="components/company.css">
+  <link rel="stylesheet" href="components/reviews.css">
+  <link rel="stylesheet" href="components/contact.css">
+  <script defer src="components/hero.js"></script>
+  <script defer src="components/map-data.js"></script>
+  <script defer src="components/projects.js"></script>
+  <script defer src="components/contact.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">К содержанию</a>
+
+  <header class="hero shell" id="top" data-hero="power">
+    <div class="hero__inner">
+      <div class="hero__bar">
+        <a class="brand" href="#top" aria-label="Альянс, начало страницы">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__name">Современные<br> системы<br> безопасности</span>
+        </a>
+        <button class="hero__menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" hidden>Меню</button>
+        <nav class="hero__navigation" id="main-menu" aria-label="Основное меню">
+          <a href="#services">Услуги</a>
+          <a href="#projects">Проекты</a>
+          <a href="#company">О компании</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+        <div class="hero__phones" aria-label="Демонстрационные номера">
+          <strong>+7 (000) 000-00-00</strong>
+          <span>+7 (000) 000-00-01</span>
+        </div>
+        <a class="button button--green hero__contact" href="#contact">Обсудить проект</a>
+      </div>
+
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-title">Проектирование<br> и монтаж промышленной<br> электрики под ключ</h1>
+          <p class="hero__description" id="hero-description">Современные Системы Безопасности — команда, которая проектирует и монтирует системы электроснабжения, безопасности и противопожарной защиты.</p>
+          <div class="hero__actions">
+            <a class="button button--light" href="#contact">Отправить проект на расчёт</a>
+            <a class="button button--clear" href="#contact">Обсудить задачу</a>
+          </div>
+        </div>
+        <ol class="hero__directions" aria-label="Направления работы">
+          <li><a href="#electrical"><span aria-hidden="true">01</span><strong>Проектирование электроснабжения</strong></a></li>
+          <li><a href="#electrical"><span aria-hidden="true">02</span><strong>Сборка щитового оборудования</strong></a></li>
+          <li><a href="#electrical"><span aria-hidden="true">03</span><strong>Электроснабжение предприятий</strong></a></li>
+        </ol>
+      </div>
+
+      <div class="hero__pagination" role="group" aria-label="Направления на первом экране" hidden>
+        <button type="button" aria-label="Промышленная электрика" aria-pressed="true" data-hero-slide="power"></button>
+        <button type="button" aria-label="Щитовое оборудование" aria-pressed="false" data-hero-slide="panels"></button>
+        <button type="button" aria-label="Электроснабжение предприятий" aria-pressed="false" data-hero-slide="supply"></button>
+        <button type="button" aria-label="Безопасность объектов" aria-pressed="false" data-hero-slide="security"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="projects shell" id="projects" aria-labelledby="projects-heading">
+      <h2 class="visually-hidden" id="projects-heading">Выполненные работы</h2>
+      <div class="projects__map-layout wrap">
+        <div class="projects__map" role="group" aria-label="Карта демонстрационных объектов">
+          <canvas class="projects__canvas" width="1000" height="780" aria-hidden="true"></canvas>
+          <div class="projects__pins" role="group" aria-label="Выбор объекта на карте"></div>
+          <div class="projects__map-actions" hidden>
+            <button class="projects__zoom" type="button" aria-pressed="false">Приблизить карту</button>
+          </div>
+        </div>
+        <article class="projects__details" aria-labelledby="project-city">
+          <h3 class="projects__city" id="project-city">Москва и Подмосковье</h3>
+          <p class="projects__name" id="project-name">Выезжаем на объекты по Москве и области.</p>
+          <div class="projects__facts" id="project-facts">
+            <strong id="project-size">Москва</strong>
+            <p id="project-description">Выберите точку, чтобы посмотреть пример объекта.</p>
+          </div>
+          <img class="projects__photo" id="project-photo" src="assets/switchgear.webp" alt="Распределительное оборудование" width="660" height="360">
+          <div class="projects__pagination" role="group" aria-label="Переключение объектов" hidden></div>
+        </article>
+        <p class="visually-hidden" id="project-status" role="status"></p>
+      </div>
+      <ul class="projects__features wrap">
+        <li><strong>Опытная команда</strong><span>От инженеров до монтажников</span></li>
+        <li><strong>Сертифицированное оборудование</strong><span>Подбираем под требования проекта</span></li>
+        <li><strong>Работа на действующих объектах</strong><span>Согласовываем график работ</span></li>
+      </ul>
+      <div class="projects__portfolio wrap" id="project-list">
+        <div class="projects__list-heading"><h3>Примеры работ</h3><span>Демонстрационные объекты</span></div>
+        <div class="projects__grid">
+          <article class="project-card">
+            <div class="project-card__media">
+              <img src="assets/switchgear.webp" alt="Шкафы распределительного оборудования" width="660" height="360" loading="lazy">
+              <div class="project-card__tags"><span>Офис</span><span>Электроснабжение</span></div>
+            </div>
+            <div class="project-card__body">
+              <h4>Офисный комплекс</h4>
+              <p><strong>Объект</strong> — офисное здание, 3 500 м²</p>
+              <p><strong>Работы</strong> — вводные щиты и освещение</p>
+              <button type="button" class="text-button" data-show-project="office" hidden>Показать на карте</button>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__media">
+              <img src="assets/factory.webp" alt="Внутреннее пространство производственного цеха" width="660" height="360" loading="lazy">
+              <div class="project-card__tags"><span>Производство</span><span>Комплекс работ</span></div>
+            </div>
+            <div class="project-card__body">
+              <h4>Производственный цех</h4>
+              <p><strong>Объект</strong> — промышленная площадка, 5 000 м²</p>
+              <p><strong>Работы</strong> — электроснабжение и оповещение</p>
+              <button type="button" class="text-button" data-show-project="factory" hidden>Показать на карте</button>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__media">
+              <img src="assets/warehouse.webp" alt="Стеллажи в глубине склада" width="660" height="360" loading="lazy">
+              <div class="project-card__tags"><span>Склад</span><span>Безопасность</span></div>
+            </div>
+            <div class="project-card__body">
+              <h4>Логистический центр</h4>
+              <p><strong>Объект</strong> — складской комплекс, 4 200 м²</p>
+              <p><strong>Работы</strong> — освещение и видеонаблюдение</p>
+              <button type="button" class="text-button" data-show-project="warehouse" hidden>Показать на карте</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services green-panel shell" id="services" aria-labelledby="services-heading">
+      <div class="wrap">
+        <div class="section-heading"><h2 id="services-heading">Услуги</h2><p>Инженерные системы<br> для бизнеса и промышленности</p></div>
+        <ol class="services__list">
+          <li class="services__item" id="electrical">
+            <span class="services__number" aria-hidden="true">01</span>
+            <div class="services__body">
+              <h3>Электромонтажные работы</h3>
+              <ul><li>Электроснабжение предприятий, складов и офисов</li><li>Рабочее, аварийное и строительное освещение</li><li>Сборка и монтаж щитового оборудования</li><li>Обслуживание систем электроснабжения</li></ul>
+            </div>
+          </li>
+          <li class="services__item" id="video">
+            <span class="services__number" aria-hidden="true">02</span>
+            <div class="services__body">
+              <h3>Видеонаблюдение</h3>
+              <ul><li>Проектирование и монтаж систем</li><li>Подбор и расчёт оборудования</li><li>Настройка и техническое обслуживание</li></ul>
+            </div>
+          </li>
+          <li class="services__item" id="fire">
+            <span class="services__number" aria-hidden="true">03</span>
+            <div class="services__body">
+              <h3>Пожарная сигнализация</h3>
+              <ul><li>Проектирование и монтаж систем</li><li>Пожаротушение и дымоудаление</li><li>Оповещение и управление эвакуацией</li><li>Обслуживание пожарных систем</li></ul>
+            </div>
+          </li>
+          <li class="services__item" id="access">
+            <span class="services__number" aria-hidden="true">04</span>
+            <div class="services__body">
+              <h3>Системы СКУД</h3>
+              <ul><li>Внедрение и обслуживание систем контроля доступа</li><li>Проектирование, расчёт оборудования и интеграция</li></ul>
+            </div>
+          </li>
+        </ol>
+        <div class="services__objects-heading"><p>От небольших офисов<br> до промышленных комплексов</p><h3>Работаем на разных объектах</h3></div>
+        <div class="services__objects">
+          <figure class="services__object"><img src="assets/office.webp" width="620" height="400" alt="" loading="lazy"><figcaption>Офисы</figcaption></figure>
+          <figure class="services__object"><img src="assets/store.webp" width="620" height="400" alt="" loading="lazy"><figcaption>Магазины</figcaption></figure>
+          <figure class="services__object services__object--warehouse"><img src="assets/warehouse.webp" width="660" height="360" alt="" loading="lazy"><figcaption>Склады</figcaption></figure>
+          <figure class="services__object services__object--factory"><img src="assets/factory.webp" width="660" height="360" alt="" loading="lazy"><figcaption>Производства и заводы</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="process shell" id="process" aria-labelledby="process-heading">
+      <div class="wrap">
+        <div class="section-heading"><h2 id="process-heading">Порядок работы</h2><p>От обращения до сдачи систем<br> и документов</p></div>
+        <ol class="process__steps">
+          <li><span class="process__number" aria-hidden="true">01</span><h3>Обращение</h3><p>Звонок, заявка или проект на почту.</p></li>
+          <li><span class="process__number" aria-hidden="true">02</span><h3>Уточнение задачи</h3><p>Обсуждаем объект, сроки и исходные данные.</p></li>
+          <li><span class="process__number" aria-hidden="true">03</span><h3>Обследование</h3><p>Выезжаем на объект при необходимости.</p></li>
+          <li><span class="process__number" aria-hidden="true">04</span><h3>Предложение и договор</h3><p>Согласовываем смету, график и состав работ.</p></li>
+          <li><span class="process__number" aria-hidden="true">05</span><h3>Выполнение работ</h3><p>Монтаж по этапам с отчётами.</p></li>
+          <li><span class="process__number" aria-hidden="true">06</span><h3>Сдача</h3><p>Пусконаладка, испытания и акты.</p></li>
+        </ol>
+        <aside class="process__estimate">
+          <div><h3>Есть проект или готовое ТЗ?</h3><p>Пришлите документацию, чтобы рассчитать стоимость работ.</p></div>
+          <a href="#contact" class="button button--green">Отправить проект на расчёт</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="company green-panel shell" id="company" aria-labelledby="company-heading">
+      <div class="wrap">
+        <div class="section-heading"><h2 id="company-heading">О компании</h2><p>Проектирование и монтаж<br> инженерных систем</p></div>
+        <div class="company__top">
+          <article class="company__card">
+            <p><strong>Современные Системы Безопасности</strong> — команда, которая занимается электроснабжением, системами безопасности и противопожарной защитой.</p>
+            <p>Работаем с объектами разного масштаба, от небольших офисов до промышленных комплексов.</p>
+            <ul class="company__team" aria-label="Команда">
+              <li><div class="company__placeholder" aria-hidden="true">Фото</div><strong>Руководитель</strong><span>Управление компанией</span></li>
+              <li><div class="company__placeholder" aria-hidden="true">Фото</div><strong>Руководитель проекта</strong><span>Координация работ</span></li>
+              <li><div class="company__placeholder" aria-hidden="true">Фото</div><strong>Инженер</strong><span>Технические решения</span></li>
+            </ul>
+          </article>
+          <article class="company__card" id="documents">
+            <h3>Сертификаты и лицензии</h3>
+            <ul class="company__documents">
+              <li><div class="company__placeholder company__placeholder--document" aria-hidden="true">Скан</div><span>Лицензия МЧС</span></li>
+              <li><div class="company__placeholder company__placeholder--document" aria-hidden="true">Скан</div><span>СРО</span></li>
+              <li><div class="company__placeholder company__placeholder--document" aria-hidden="true">Скан</div><span>Выписка из СРО</span></li>
+            </ul>
+          </article>
+        </div>
+        <div class="company__standards" aria-labelledby="standards-heading">
+          <div class="section-heading"><h3 id="standards-heading">Качество, сроки и смета</h3><p>Как согласовываем и проверяем<br> работы на объекте</p></div>
+          <div class="company__grid">
+            <article class="company__card"><h4>Качество</h4><ul><li>Сертифицированное оборудование</li><li>Фотофиксация скрытых работ</li><li>Испытания и исполнительная документация</li></ul><a href="#documents">Лицензии и документы</a></article>
+            <article class="company__card company__card--dark"><h4>Сроки</h4><ul><li>График согласуем до договора</li><li>Работаем поэтапно</li><li>Показываем прогресс по объекту</li></ul><a href="#project-list">Смотреть проекты</a></article>
+            <article class="company__card"><h4>Стоимость</h4><ul><li>Разбивка сметы по работам и материалам</li><li>Проверка проекта перед расчётом</li><li>Дополнительные работы по согласованию</li></ul><a href="#contact">Запросить расчёт</a></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews shell" id="reviews" aria-labelledby="reviews-heading">
+      <div class="wrap">
+        <div class="section-heading"><h2 id="reviews-heading">Отзывы клиентов</h2><p>Демонстрационные образцы<br> отзывов и благодарственных писем</p></div>
+        <div class="reviews__grid">
+          <figure class="reviews__quote"><blockquote>На первом выезде уточнили расположение оборудования и предложили порядок работ, чтобы не останавливать цех.</blockquote><figcaption>Руководитель производства</figcaption></figure>
+          <figure class="reviews__quote"><blockquote>В смете сразу было видно, из чего складывается стоимость. После монтажа мы получили схему и результаты испытаний.</blockquote><figcaption>Представитель заказчика</figcaption></figure>
+          <figure class="reviews__quote"><blockquote>Работали по согласованному графику. После каждого этапа можно было проверить, что уже готово.</blockquote><figcaption>Управляющий объектом</figcaption></figure>
+          <article class="reviews__letter"><div class="reviews__scan" aria-hidden="true">Скан</div><div><h3>Благодарственное письмо</h3><p>Место для письма о выполненных работах.</p></div></article>
+          <article class="reviews__letter"><div class="reviews__scan" aria-hidden="true">Скан</div><div><h3>Благодарность команде</h3><p>Место для письма от заказчика.</p></div></article>
+          <figure class="reviews__quote"><blockquote>После сдачи показали, где в документации искать параметры оборудования. Это пригодилось при дальнейшем обслуживании.</blockquote><figcaption>Инженер эксплуатации</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact shell" id="contact" aria-labelledby="contact-heading">
+      <div class="wrap">
+        <h2 id="contact-heading">Обсудить объект</h2>
+        <div class="contact__layout">
+          <div class="contact__copy">
+            <p>Приложите проект или ТЗ, чтобы обсудить документацию и подготовить расчёт.</p>
+            <address class="contact__details" aria-label="Демонстрационные контакты">
+              <strong>+7 (000) 000-00-00</strong>
+              <span>+7 (000) 000-00-01</span>
+              <span>demo@example.com</span>
+            </address>
+          </div>
+          <form class="contact__form" id="preview-form" method="dialog">
+            <label for="contact-name">Имя</label>
+            <input id="contact-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" required maxlength="120">
+            <div class="contact__row">
+              <div><label for="contact-phone">Телефон</label><input id="contact-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required maxlength="22"></div>
+              <div><label for="contact-email">Электронная почта</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="mail@company.ru" maxlength="254"></div>
+            </div>
+            <label for="contact-message">Объект и задача</label>
+            <textarea id="contact-message" name="message" rows="3" placeholder="Тип объекта, адрес и состав работ" maxlength="2000" required></textarea>
+            <label class="contact__upload" for="contact-file">
+              <strong>Прикрепить проект, ТЗ или план помещения</strong>
+              <span id="contact-file-note">PDF, JPG, XLSX · до 20 МБ</span>
+              <input id="contact-file" name="attachment" type="file" accept=".pdf,.jpg,.jpeg,.xlsx" aria-describedby="contact-file-note">
+            </label>
+            <label class="contact__consent"><input name="consent" type="checkbox" required> <span>Согласен на обработку данных формы</span></label>
+            <button class="button button--green contact__submit" type="submit">Проверить заявку</button>
+            <p class="contact__status" id="contact-status" role="status">Демонстрационная форма. Данные остаются в браузере.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer green-panel shell">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="#top" aria-label="Альянс, начало страницы"><span class="brand__mark" aria-hidden="true"></span><span class="brand__name">Современные<br> системы<br> безопасности</span></a>
+          <p>Инженерные системы для бизнеса, от проектирования до обслуживания.</p>
+          <a class="button button--outline" href="#contact">Отправить проект на расчёт</a>
+        </div>
+        <nav aria-label="Услуги"><h2>Услуги</h2><a href="#electrical">Электромонтажные работы</a><a href="#fire">Пожарная сигнализация</a><a href="#video">Видеонаблюдение</a><a href="#access">Системы СКУД</a></nav>
+        <nav aria-label="Компания"><h2>Компания</h2><a href="#company">О компании</a><a href="#projects">Выполненные проекты</a><a href="#documents">Лицензии и документы</a><a href="#reviews">Отзывы клиентов</a><a href="#contact">Контакты</a></nav>
+        <div><h2>Контакты</h2><p>Демонстрационные данные</p><p>+7 (000) 000-00-00<br>demo@example.com</p></div>
+      </div>
+      <div class="footer__bottom"><span>«Альянс» · демонстрационная вёрстка</span><a href="#top">К началу страницы</a></div>
+    </div>
+  </footer>
+</body>
+</html>
