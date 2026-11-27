@@ -2,7 +2,9 @@
 .projects__map-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 32.75%); align-items: start; gap: 1.25rem; }
 .projects__map { position: relative; width: calc(100% + min(7vw, 100px)); margin-inline-start: calc(-1 * min(7vw, 100px)); aspect-ratio: 920 / 740; }
 .projects__map-art, .projects__pins { position: absolute; inset: 0; }
-.projects__map-art { overflow: hidden; }
+.projects__map-art { touch-action: pan-y; }
+.projects__map--zoomed .projects__map-art { cursor: grab; touch-action: none; }
+.projects__map--zoomed .projects__map-art:active { cursor: grabbing; }
 .projects__map-art img { width: 100%; height: 100%; }
 .projects__map-actions { position: absolute; inset: auto auto .7rem min(7vw, 100px); }
 .projects__zoom { min-height: 2.75rem; padding: .3rem .75rem; border: 1px solid #b9c6b9; border-radius: .5rem; background: #f8faf6; color: #294833; font-size: .82rem; font-weight: 650; }
@@ -19,11 +21,11 @@
 .projects__track.splide__track--draggable { cursor: grab; touch-action: pan-y; }
 .projects__track.splide__track--draggable:active { cursor: grabbing; }
 .projects__slide { width: 100%; display: flex; flex-direction: column; }
-.projects__city { font-size: clamp(1.8rem, 3vw, 2.8rem); text-transform: uppercase; }
+.projects__city { font-size: clamp(1.8rem, 3.06vw, 2.75rem); line-height: 1.05; letter-spacing: normal; text-transform: uppercase; }
 .projects__name { margin-top: 1rem; font-size: 1.08rem; font-weight: 700; }
 .projects__facts { display: flex; align-items: flex-start; gap: 1.1rem; padding: 1rem 0 .9rem; margin-top: 1.1rem; border-top: 1px solid #c9ccc7; }
 .projects__facts strong { flex: none; font: 500 clamp(1.3rem, 2vw, 2.1rem)/1.05 Tektur, Bahnschrift, sans-serif; }
-.projects__facts p { max-width: 19rem; color: #464c47; font-size: .9rem; }
+.projects__facts p { max-width: 19rem; color: #464c47; }
 .projects__photo { width: 100%; height: auto; aspect-ratio: 1.85; object-fit: cover; border-radius: .72rem; margin-top: auto; }
 .projects__pagination { flex-wrap: nowrap; }
 .projects__pagination li { flex: 0 1 2.75rem; min-width: 0; }

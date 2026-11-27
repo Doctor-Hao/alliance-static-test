@@ -8,8 +8,8 @@
   <title>Альянс — проектирование и монтаж промышленной электрики</title>
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="assets/vendor/splide/splide-core.min.css">
-  <link rel="stylesheet" href="components/hero/hero.css?v=291ac10eab">
-  <link rel="stylesheet" href="components/projects/projects.css?v=07eb9894ef">
+  <link rel="stylesheet" href="components/hero/hero.css?v=5426771ada">
+  <link rel="stylesheet" href="components/projects/projects.css?v=a1e51dd6f0">
   <link rel="stylesheet" href="components/services/services.css?v=49ed126b51">
   <link rel="stylesheet" href="components/process/process.css?v=6081a69b70">
   <link rel="stylesheet" href="components/company/company.css?v=401455f1e3">
@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="components/contact/contact.css?v=58eb516a1c">
   <link rel="stylesheet" href="components/footer/footer.css?v=b00cff238b">
   <script defer src="assets/vendor/splide/splide.min.js"></script>
+  <script defer src="assets/vendor/panzoom/panzoom-4.6.2.min.js"></script>
   <script defer src="components/hero/hero.js?v=c3ab6b1500"></script>
-  <script defer src="components/projects/projects.js?v=6d87d1380e"></script>
+  <script defer src="components/projects/projects.js?v=f384d2d14d"></script>
   <script defer src="components/contact/contact.js?v=b23c0ebd99"></script>
 </head>
 <body>
@@ -95,8 +96,10 @@
       <h2 class="visually-hidden" id="projects-heading">Выполненные работы</h2>
       <div class="projects__map-layout wrap">
         <div class="projects__map" role="group" aria-label="Карта демонстрационных объектов">
-          <div class="projects__map-art" aria-hidden="true"><img src="assets/images/moscow-region.webp" alt="" width="1400" height="1157"></div>
-          <div class="projects__pins" role="group" aria-label="Выбор объекта на карте"></div>
+          <div class="projects__map-art">
+            <img src="assets/images/moscow-region.webp" alt="" width="1400" height="1157" draggable="false">
+            <div class="projects__pins" role="group" aria-label="Выбор объекта на карте"></div>
+          </div>
           <div class="projects__map-actions" hidden>
             <button class="projects__zoom" type="button" aria-pressed="false">Приблизить карту</button>
           </div>

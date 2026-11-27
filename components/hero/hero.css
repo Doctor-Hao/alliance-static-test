@@ -75,7 +75,7 @@
   align-content: start;
 }
 .hero__inner:not(.is-initialized) .hero__slide:not(:first-child) { height: 0; visibility: hidden; }
-.hero__title { grid-column: 1; max-width: 48rem; font-size: clamp(2.5rem, 3.87vw, 3.5rem); text-transform: uppercase; line-height: 1.03; white-space: pre-line; }
+.hero__title { grid-column: 1; max-width: 48rem; font-size: clamp(2.5rem, 3.62vw, 3.25rem); text-transform: uppercase; line-height: 1.12; letter-spacing: normal; white-space: pre-line; }
 .hero__description { grid-column: 1; max-width: 41rem; margin-top: 1.7rem; font-size: clamp(.95rem, 1.35vw, 1.125rem); color: #fbfcf8; }
 .hero__actions { grid-column: 1; grid-row: 2; display: flex; flex-wrap: wrap; gap: .75rem; max-width: 48rem; margin-top: 1.55rem; }
 .hero__actions .button--light { min-width: min(100%, 17.5rem); }
@@ -109,15 +109,12 @@
   align-self: end;
   justify-content: flex-start;
   margin-top: .75rem;
-  padding-inline: .25rem;
-  border: 1px solid #ffffff55;
-  border-radius: 2rem;
-  background: #0e1814bf;
 }
 .hero__pagination:empty { display: none; }
-.hero__pagination button { display: block; width: 2.75rem; height: 2.75rem; padding: 0; border: 0; border-radius: 50%; background: transparent; transition: background-color var(--hover-duration) ease-out; }
-.hero__pagination button::after { content: ''; display: block; width: .63rem; height: .63rem; margin: auto; border-radius: 1rem; background: #f5faf4; }
-.hero__pagination button[aria-selected='true']::after { width: 1.65rem; }
+.hero__pagination button { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 0; border-radius: 2rem; background: transparent; transition: width var(--hover-duration) ease-out, background-color var(--hover-duration) ease-out; }
+.hero__pagination button::after { content: ''; width: .625rem; height: .625rem; border-radius: 1rem; background: #fff; box-shadow: 0 1px 3px #15201c66; transition: width var(--hover-duration) ease-out; }
+.hero__pagination button[aria-selected='true'] { width: 5rem; }
+.hero__pagination button[aria-selected='true']::after { width: 5rem; background: linear-gradient(90deg, #17251e9e 70%, #fff 70%); }
 .hero__menu-toggle { width: 2.75rem; min-height: 2.75rem; padding: 0; }
 .hero__menu-toggle span { width: .95rem; height: .65rem; border-block: 1px solid currentColor; background: linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat; }
 

@@ -4,15 +4,10 @@
   const section = document.querySelector('#projects');
   const details = section.querySelector('.projects__details');
   const slides = Array.from(details.querySelectorAll('.projects__slide'));
-  const mapImage = section.querySelector('.projects__map-art img');
   const pins = section.querySelector('.projects__pins');
-  const zoom = section.querySelector('.projects__zoom');
   const map = section.querySelector('.projects__map');
   const status = section.querySelector('#project-status');
-  const zoomOrigin = { x: 54, y: 64 };
-  const zoomScale = 1.45;
   const mapButtons = [];
-  mapImage.style.transformOrigin = `${zoomOrigin.x}% ${zoomOrigin.y}%`;
 
   const slider = new window.Splide(details, {
     type: 'loop',
@@ -53,9 +48,11 @@
     pin.title = label;
     pin.setAttribute('aria-label', label);
     pin.setAttribute('aria-pressed', 'false');
+    pin.style.left = `${x}%`;
+    pin.style.top = `${y}%`;
     pin.addEventListener('click', () => slider.go(index));
     pins.append(pin);
-    mapButtons.push({ pin, index, x: Number(x), y: Number(y) });
+    mapButtons.push({ pin, index });
 
     const cardButton = section.querySelector(`[data-show-project="${project}"]`);
     if (!cardButton) continue;
@@ -68,22 +65,61 @@
     });
   }
 
-  function positionPins(scale) {
-    for (const { pin, x, y } of mapButtons) {
-      pin.style.left = `${zoomOrigin.x + (x - zoomOrigin.x) * scale}%`;
-      pin.style.top = `${zoomOrigin.y + (y - zoomOrigin.y) * scale}%`;
-    }
-  }
+  if (!window.Panzoom) return;
+
+  const mapArt = map.querySelector('.projects__map-art');
+  const zoom = map.querySelector('.projects__zoom');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const panzoom = window.Panzoom(mapArt, {
+    minScale: 1,
+    maxScale: 2.5,
+    contain: 'outside',
+    panOnlyWhenZoomed: true,
+    touchAction: '',
+    excludeClass: 'projects__pin',
+    overflow: 'clip',
+    cursor: '',
+  });
+
+  mapArt.addEventListener('panzoomchange', ({ detail: { scale } }) => {
+    const isZoomed = scale > 1.001;
+    const pressed = String(isZoomed);
+    if (zoom.getAttribute('aria-pressed') === pressed) return;
+    map.classList.toggle('projects__map--zoomed', isZoomed);
+    zoom.setAttribute('aria-pressed', pressed);
+    zoom.textContent = isZoomed ? 'Показать всю область' : 'Приблизить карту';
+  });
 
   zoom.addEventListener('click', () => {
-    const isZoomed = zoom.getAttribute('aria-pressed') === 'false';
-    const scale = isZoomed ? zoomScale : 1;
-    zoom.setAttribute('aria-pressed', String(isZoomed));
-    zoom.textContent = isZoomed ? 'Показать всю область' : 'Приблизить карту';
-    mapImage.style.transform = `scale(${scale})`;
-    positionPins(scale);
+    const animate = !reducedMotion.matches;
+    if (panzoom.getScale() > 1.001) {
+      panzoom.reset({ animate });
+      return;
+    }
+
+    const scale = 1.45;
+    const origin = { x: 0.54, y: 0.75 };
+    panzoom.zoom(scale, {
+      animate,
+      focal: {
+        x: (origin.x - 0.5) * map.clientWidth * scale,
+        y: (origin.y - 0.5) * map.clientHeight * scale,
+      },
+    });
+  });
+
+  pins.addEventListener('focusin', ({ target }) => {
+    const view = map.getBoundingClientRect();
+    const pin = target.getBoundingClientRect();
+    if (pin.right > view.left && pin.left < view.right && pin.bottom > view.top && pin.top < view.bottom) return;
+
+    const scale = panzoom.getScale();
+    panzoom.pan(
+      (view.left + view.width / 2 - pin.left - pin.width / 2) / scale,
+      (view.top + view.height / 2 - pin.top - pin.height / 2) / scale,
+      { relative: true },
+    );
   });
 
   section.querySelector('.projects__map-actions').hidden = false;
-  positionPins(1);
 })();
