@@ -8,6 +8,28 @@
 python -m http.server 8765 --bind 127.0.0.1
 ```
 
+## Структура проекта
+
+Разметка страницы находится в `index.html`. У каждой секции своя папка в `components/`. Скрипт лежит рядом со стилями секции, если в ней есть интерактивность. Общие стили находятся в `styles/base.css`.
+
+```text
+index.html
+components/
+  hero/          первый экран, навигация и слайды
+  projects/      карта и карточки проектов
+  services/      услуги и фотоколлаж
+  process/       этапы работ
+  company/       компания, команда и документы
+  reviews/       отзывы
+  contact/       форма и проверка ввода
+  footer/        подвал
+styles/
+  base.css       типографика, общие элементы и сетка
+assets/
+  fonts/
+  images/
+```
+
 ## Материалы
 
 Фотографии первого экрана, карточек проектов и коллажа услуг взяты из предоставленного макета и оптимизированы в WebP. Остальные фотографии для слайдов и карты перечислены ниже.
@@ -19,4 +41,4 @@ python -m http.server 8765 --bind 127.0.0.1
 | `warehouse.webp` | Axisadman, [Modern warehouse with pallet rack storage system](https://commons.wikimedia.org/wiki/File:Modern_warehouse_with_pallet_rack_storage_system.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `factory.webp` | Shixart1985, [Industrial production line operating in a large modern factory](https://commons.wikimedia.org/wiki/File:Industrial_production_line_operating_in_a_large_modern_factory.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
 
-Контур карты взят из предоставленного макета. Шрифты [Montserrat](assets/montserrat-OFL.txt) и [Tektur](assets/tektur-OFL.txt) поставляются по SIL Open Font License.
+Контур карты взят из предоставленного макета. Шрифты [Montserrat](assets/fonts/montserrat-OFL.txt) и [Tektur](assets/fonts/tektur-OFL.txt) поставляются по SIL Open Font License.

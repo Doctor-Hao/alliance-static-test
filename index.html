@@ -6,17 +6,18 @@
   <meta name="description" content="Демонстрационная главная инженерной компании «Альянс».">
   <meta name="robots" content="noindex, nofollow">
   <title>Альянс — проектирование и монтаж промышленной электрики</title>
-  <link rel="stylesheet" href="components/base.css">
-  <link rel="stylesheet" href="components/hero.css">
-  <link rel="stylesheet" href="components/projects.css">
-  <link rel="stylesheet" href="components/services.css">
-  <link rel="stylesheet" href="components/process.css">
-  <link rel="stylesheet" href="components/company.css">
-  <link rel="stylesheet" href="components/reviews.css">
-  <link rel="stylesheet" href="components/contact.css">
-  <script defer src="components/hero.js"></script>
-  <script defer src="components/projects.js"></script>
-  <script defer src="components/contact.js"></script>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="components/hero/hero.css">
+  <link rel="stylesheet" href="components/projects/projects.css">
+  <link rel="stylesheet" href="components/services/services.css">
+  <link rel="stylesheet" href="components/process/process.css">
+  <link rel="stylesheet" href="components/company/company.css">
+  <link rel="stylesheet" href="components/reviews/reviews.css">
+  <link rel="stylesheet" href="components/contact/contact.css">
+  <link rel="stylesheet" href="components/footer/footer.css">
+  <script defer src="components/hero/hero.js"></script>
+  <script defer src="components/projects/projects.js"></script>
+  <script defer src="components/contact/contact.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">К содержанию</a>
@@ -45,7 +46,9 @@
 
       <div class="hero__grid">
         <div class="hero__copy">
-          <h1 class="hero__title" id="hero-title">Проектирование<br> и монтаж промышленной<br> электрики под ключ</h1>
+          <h1 class="hero__title" id="hero-title">Проектирование
+          и монтаж промышленной
+          электрики под ключ</h1>
           <p class="hero__description" id="hero-description">Современные Системы Безопасности — команда профессионалов, реализующая проекты в сфере электроснабжения, систем безопасности и противопожарной защиты.</p>
           <div class="hero__actions">
             <a class="button button--light" href="#contact">Отправить проект на расчёт</a>
@@ -73,7 +76,7 @@
       <h2 class="visually-hidden" id="projects-heading">Выполненные работы</h2>
       <div class="projects__map-layout wrap">
         <div class="projects__map" role="group" aria-label="Карта демонстрационных объектов">
-          <div class="projects__map-art" aria-hidden="true"><img src="assets/moscow-region.webp" alt="" width="1400" height="1157"></div>
+          <div class="projects__map-art" aria-hidden="true"><img src="assets/images/moscow-region.webp" alt="" width="1400" height="1157"></div>
           <div class="projects__pins" role="group" aria-label="Выбор объекта на карте"></div>
           <div class="projects__map-actions" hidden>
             <button class="projects__zoom" type="button" aria-pressed="false">Приблизить карту</button>
@@ -86,7 +89,7 @@
             <strong id="project-size">Москва</strong>
             <p id="project-description">Выберите точку, чтобы посмотреть пример объекта.</p>
           </div>
-          <img class="projects__photo" id="project-photo" src="assets/project-office.webp" alt="Распределительное оборудование" width="704" height="518">
+          <img class="projects__photo" id="project-photo" src="assets/images/project-office.webp" alt="Распределительное оборудование" width="704" height="518">
           <div class="projects__pagination" role="group" aria-label="Переключение объектов" hidden></div>
         </article>
         <p class="visually-hidden" id="project-status" role="status"></p>
@@ -101,7 +104,7 @@
         <div class="projects__grid">
           <article class="project-card">
             <div class="project-card__media">
-              <img src="assets/project-office.webp" alt="Шкафы распределительного оборудования" width="704" height="518" loading="lazy">
+              <img src="assets/images/project-office.webp" alt="Шкафы распределительного оборудования" width="704" height="518" loading="lazy">
               <div class="project-card__tags"><span>Офис</span><span>Электроснабжение</span></div>
             </div>
             <div class="project-card__body">
@@ -114,7 +117,7 @@
           </article>
           <article class="project-card">
             <div class="project-card__media">
-              <img src="assets/project-factory.webp" alt="Производственный цех с монтажным подъёмником" width="920" height="435" loading="lazy">
+              <img src="assets/images/project-factory.webp" alt="Производственный цех с монтажным подъёмником" width="920" height="435" loading="lazy">
               <div class="project-card__tags"><span>Производство</span><span>Комплекс работ</span></div>
             </div>
             <div class="project-card__body">
@@ -127,7 +130,7 @@
           </article>
           <article class="project-card">
             <div class="project-card__media">
-              <img src="assets/project-warehouse.webp" alt="Пожарное оборудование у стены склада" width="704" height="458" loading="lazy">
+              <img src="assets/images/project-warehouse.webp" alt="Пожарное оборудование у стены склада" width="704" height="458" loading="lazy">
               <div class="project-card__tags"><span>Склад</span><span>Безопасность</span></div>
             </div>
             <div class="project-card__body">
@@ -177,10 +180,10 @@
         </ol>
         <div class="services__objects-heading"><p>От небольших офисов<br> до промышленных комплексов</p><h3>Работаем на разных объектах</h3></div>
         <div class="services__objects">
-          <figure class="services__object"><img src="assets/office.webp" width="680" height="440" alt="" loading="lazy"><figcaption>Офисы</figcaption></figure>
-          <figure class="services__object"><img src="assets/store.webp" width="680" height="440" alt="" loading="lazy"><figcaption>Магазины</figcaption></figure>
-          <figure class="services__object services__object--warehouse"><img src="assets/collage-warehouse.webp" width="680" height="690" alt="" loading="lazy"><figcaption>Склады</figcaption></figure>
-          <figure class="services__object services__object--factory"><img src="assets/collage-factory.webp" width="1050" height="550" alt="" loading="lazy"><figcaption>Производства и заводы</figcaption></figure>
+          <figure class="services__object"><img src="assets/images/office.webp" width="680" height="440" alt="" loading="lazy"><figcaption>Офисы</figcaption></figure>
+          <figure class="services__object"><img src="assets/images/store.webp" width="680" height="440" alt="" loading="lazy"><figcaption>Магазины</figcaption></figure>
+          <figure class="services__object services__object--warehouse"><img src="assets/images/collage-warehouse.webp" width="680" height="690" alt="" loading="lazy"><figcaption>Склады</figcaption></figure>
+          <figure class="services__object services__object--factory"><img src="assets/images/collage-factory.webp" width="1050" height="550" alt="" loading="lazy"><figcaption>Производства и заводы</figcaption></figure>
         </div>
       </div>
     </section>

@@ -5,6 +5,7 @@
   const fileNote = form.querySelector('#contact-file-note');
   const status = form.querySelector('#contact-status');
   const defaultFileNote = fileNote.textContent;
+  const maxFileSize = 20 * 1024 * 1024;
 
   function phoneDigits(value) {
     const digits = value.replace(/\D/g, '');
@@ -23,7 +24,8 @@
     attachment.setCustomValidity('');
     fileNote.textContent = defaultFileNote;
     if (!file) return;
-    if (!/\.(pdf|jpe?g|xlsx)$/i.test(file.name) || file.size > 20 * 1024 * 1024) {
+    const acceptedExtension = /\.(pdf|jpe?g|xlsx)$/i.test(file.name);
+    if (!acceptedExtension || file.size > maxFileSize) {
       attachment.setCustomValidity('Выберите PDF, JPG или XLSX размером до 20 МБ.');
       attachment.reportValidity();
       return;

@@ -4,11 +4,11 @@
   padding: 2.5rem 0 .5rem;
   color: #fff;
   border-radius: 0 0 3rem 3rem;
-  background: linear-gradient(90deg, #141b186b, #13191829 68%, #15171426), url('../assets/cabinet.webp') center / cover;
+  background: linear-gradient(90deg, #141b186b, #13191829 68%, #15171426), url('../../assets/images/cabinet.webp') center / cover;
 }
-.hero[data-hero='panels'] { background-image: linear-gradient(90deg, #12221ce8, #12221c55), url('../assets/switchgear.webp'); }
-.hero[data-hero='supply'] { background-image: linear-gradient(90deg, #12221ceb, #12221c4d), url('../assets/factory.webp'); }
-.hero[data-hero='security'] { background-image: linear-gradient(90deg, #12221ceb, #12221c55), url('../assets/warehouse.webp'); }
+.hero[data-hero='panels'] { background-image: linear-gradient(90deg, #12221ce8, #12221c55), url('../../assets/images/switchgear.webp'); }
+.hero[data-hero='supply'] { background-image: linear-gradient(90deg, #12221ceb, #12221c4d), url('../../assets/images/factory.webp'); }
+.hero[data-hero='security'] { background-image: linear-gradient(90deg, #12221ceb, #12221c55), url('../../assets/images/warehouse.webp'); }
 .hero__inner { width: 86%; max-width: 1240px; margin-inline: auto; display: flex; flex-direction: column; }
 .hero__bar {
   position: relative;
@@ -77,7 +77,6 @@
   .hero__contact { display: none; }
   .hero__navigation { gap: 1rem; }
   .hero__title { white-space: normal; }
-  .hero__title br { display: none; }
 }
 
 @media (max-width: 700px) {
@@ -88,7 +87,6 @@
   .hero__navigation { width: 100%; flex-wrap: wrap; gap: .2rem .8rem; }
   .hero__grid { grid-template-columns: minmax(0, 1fr); gap: 2rem; margin-top: 2.05rem; }
   .hero__title { max-width: 32rem; font-size: clamp(1.5rem, 6.55vw, 2.3rem); line-height: 1.09; white-space: pre-line; }
-  .hero__title br { display: initial; }
   .hero__description { margin-top: 1rem; max-width: 31rem; font-size: 1rem; }
   .hero__actions { flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
   .hero__actions .button { min-height: 3.125rem; padding-inline: .75rem; }
@@ -102,5 +100,4 @@
 
 @media (max-width: 400px) {
   .hero__title { white-space: normal; }
-  .hero__title br { display: none; }
 }

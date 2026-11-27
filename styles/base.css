@@ -1,6 +1,6 @@
 @font-face {
   font-family: Montserrat;
-  src: url('../assets/montserrat.ttf') format('truetype');
+  src: url('../assets/fonts/montserrat.ttf') format('truetype');
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: Tektur;
-  src: url('../assets/tektur.ttf') format('truetype');
+  src: url('../assets/fonts/tektur.ttf') format('truetype');
   font-style: normal;
   font-weight: 400 900;
   font-display: swap;
@@ -108,7 +108,6 @@ h2, .section-heading h3 { font-size: clamp(2rem, 3.5vw, 3.125rem); text-transfor
 .button--clear:hover { background: #ffffff24; }
 .button--outline { color: #fff; background: transparent; border-color: #ddebdb99; }
 .button--outline:hover { background: #ffffff24; }
-.footer a:hover { text-decoration: underline; }
 .diagonal-arrow::after {
   content: '';
   width: 1rem;
