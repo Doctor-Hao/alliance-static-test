@@ -6,7 +6,18 @@
 .process__steps li:nth-child(even) { align-self: start; margin-top: 13.25rem; }
 .process__steps li::before { content: ''; position: absolute; top: 2.5rem; left: .25rem; width: 1px; height: 8rem; background: #97ad95; }
 .process__steps li:nth-child(even)::before { top: -2.75rem; height: 1.9rem; }
-.process__steps li::after { content: ''; position: absolute; top: 10.2rem; left: 0; width: .59rem; height: .59rem; border: 1px solid #4c674e; border-radius: 50%; background: #f4f4f4; }
+.process__steps li::after {
+  content: '';
+  position: absolute;
+  top: 10.2rem;
+  left: 0;
+  width: .59rem;
+  height: .59rem;
+  border: 1px solid #4c674e;
+  border-radius: 50%;
+  background: #f4f4f4;
+  transition: background-color var(--hover-duration) ease-out, border-color var(--hover-duration) ease-out, box-shadow var(--hover-duration) ease-out;
+}
 .process__steps li:nth-child(even)::after { top: -3.05rem; }
 .process__steps li:last-child::after { background: #315545; }
 .process__number { color: #242b26; font: 500 1.82rem/1 Tektur, Bahnschrift, sans-serif; }
@@ -16,6 +27,14 @@
 .process__estimate h3 { font-size: clamp(1.35rem, 2.7vw, 2.2rem); text-transform: uppercase; }
 .process__estimate p { margin-top: .55rem; color: #555c55; }
 .process__estimate .button { flex: none; }
+
+@media (hover: hover) {
+  .process__steps li:has(> .process__number:hover)::after {
+    border-color: #386549;
+    background-color: #72ac5f;
+    box-shadow: 0 0 0 .2rem #78ad6355, 0 0 .65rem #407a4a88;
+  }
+}
 
 @media (max-width: 900px) {
   .process__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1rem; min-height: 0; margin: 2rem 0 2.6rem; }
@@ -29,7 +48,8 @@
 @media (max-width: 620px) {
   .process { padding: 3.5rem 0 2rem; }
   .process__steps { grid-template-columns: minmax(0, 1fr); gap: 0; margin: 2.35rem 0 0; }
-  .process__steps li { min-height: 6.25rem; padding-inline-start: 1.85rem; }
+  .process__steps li { min-height: 6.25rem; padding-inline-start: 1.85rem; padding-block-end: 1.75rem; }
+  .process__steps li:last-child { padding-block-end: 0; }
   .process__steps li::before, .process__steps li:nth-child(even)::before { top: .4rem; height: 100%; }
   .process__steps li:last-child::before { display: none; }
   .process__steps li::after, .process__steps li:nth-child(even)::after { top: .4rem; }

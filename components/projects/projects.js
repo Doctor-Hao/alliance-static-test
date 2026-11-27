@@ -68,7 +68,6 @@
   if (!window.Panzoom) return;
 
   const mapArt = map.querySelector('.projects__map-art');
-  const zoom = map.querySelector('.projects__zoom');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const panzoom = window.Panzoom(mapArt, {
     minScale: 1,
@@ -81,16 +80,7 @@
     cursor: '',
   });
 
-  mapArt.addEventListener('panzoomchange', ({ detail: { scale } }) => {
-    const isZoomed = scale > 1.001;
-    const pressed = String(isZoomed);
-    if (zoom.getAttribute('aria-pressed') === pressed) return;
-    map.classList.toggle('projects__map--zoomed', isZoomed);
-    zoom.setAttribute('aria-pressed', pressed);
-    zoom.textContent = isZoomed ? 'Показать всю область' : 'Приблизить карту';
-  });
-
-  zoom.addEventListener('click', () => {
+  function toggleZoom() {
     const animate = !reducedMotion.matches;
     if (panzoom.getScale() > 1.001) {
       panzoom.reset({ animate });
@@ -106,6 +96,20 @@
         y: (origin.y - 0.5) * map.clientHeight * scale,
       },
     });
+  }
+
+  mapArt.addEventListener('panzoomchange', ({ detail: { scale } }) => {
+    map.classList.toggle('projects__map--zoomed', scale > 1.001);
+  });
+
+  mapArt.addEventListener('dblclick', (event) => {
+    if (!event.target.closest('.projects__pin')) toggleZoom();
+  });
+
+  map.tabIndex = 0;
+  map.setAttribute('aria-describedby', 'project-map-keys');
+  map.addEventListener('keydown', (event) => {
+    if (event.target === map && event.key === 'Enter' && !event.repeat) toggleZoom();
   });
 
   pins.addEventListener('focusin', ({ target }) => {
@@ -120,6 +124,4 @@
       { relative: true },
     );
   });
-
-  section.querySelector('.projects__map-actions').hidden = false;
 })();

@@ -9,17 +9,17 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="assets/vendor/splide/splide-core.min.css">
   <link rel="stylesheet" href="components/hero/hero.css?v=5426771ada">
-  <link rel="stylesheet" href="components/projects/projects.css?v=a1e51dd6f0">
-  <link rel="stylesheet" href="components/services/services.css?v=49ed126b51">
-  <link rel="stylesheet" href="components/process/process.css?v=6081a69b70">
+  <link rel="stylesheet" href="components/projects/projects.css?v=ab9e2aeeea">
+  <link rel="stylesheet" href="components/services/services.css?v=e43a1c6443">
+  <link rel="stylesheet" href="components/process/process.css?v=14bb27705e">
   <link rel="stylesheet" href="components/company/company.css?v=401455f1e3">
   <link rel="stylesheet" href="components/reviews/reviews.css?v=be80e55a14">
-  <link rel="stylesheet" href="components/contact/contact.css?v=58eb516a1c">
+  <link rel="stylesheet" href="components/contact/contact.css?v=e45df4af13">
   <link rel="stylesheet" href="components/footer/footer.css?v=b00cff238b">
   <script defer src="assets/vendor/splide/splide.min.js"></script>
   <script defer src="assets/vendor/panzoom/panzoom-4.6.2.min.js"></script>
   <script defer src="components/hero/hero.js?v=c3ab6b1500"></script>
-  <script defer src="components/projects/projects.js?v=f384d2d14d"></script>
+  <script defer src="components/projects/projects.js?v=b81ca0bfad"></script>
   <script defer src="components/contact/contact.js?v=b23c0ebd99"></script>
 </head>
 <body>
@@ -100,9 +100,7 @@
             <img src="assets/images/moscow-region.webp" alt="" width="1400" height="1157" draggable="false">
             <div class="projects__pins" role="group" aria-label="Выбор объекта на карте"></div>
           </div>
-          <div class="projects__map-actions" hidden>
-            <button class="projects__zoom" type="button" aria-pressed="false">Приблизить карту</button>
-          </div>
+          <p id="project-map-keys" hidden>Нажмите Enter, чтобы изменить масштаб карты.</p>
         </div>
         <div class="projects__details splide" role="group" aria-label="Проекты на карте">
           <div class="projects__track splide__track">
@@ -325,8 +323,8 @@
           <div class="contact__copy">
             <p>Приложите проект или ТЗ — проверим документацию и подготовим расчёт.</p>
             <address class="contact__details" aria-label="Демонстрационные контакты">
-              <strong>+7 (000) 000-00-00</strong>
-              <span>+7 (000) 000-00-01</span>
+              <strong class="contact__phone">+7 (000) 000-00-00</strong>
+              <span class="contact__phone">+7 (000) 000-00-01</span>
               <span class="contact__email">demo@example.com</span>
               <div class="contact__channels" aria-label="Каналы связи в макете">
                 <button type="button" disabled><span class="contact__channel-mark contact__channel-mark--plane" aria-hidden="true"></span>Telegram</button>
